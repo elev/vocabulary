@@ -1,0 +1,28 @@
+body {
+	background-color:#252525;
+}
+
+header h2 {
+	margin-left: 100px;
+	color: #a9a9a9;
+}
+ul{
+	list-style-type: none;
+	color: #D9D9F3;
+}
+
+#main{
+	position: absolute;
+	margin-top:200px;
+	left: 50%;
+	width:300px;
+	margin-left:-150px;
+}
+
+#overlay{
+	background-color:#000;
+	opacity: .7;
+	z-index: 300;
+	height: 100%; width:100%;
+	position:absolute; top:0; left:0;
+}
