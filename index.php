@@ -19,6 +19,9 @@
 				<h2>Welcome to my vocabulary building site,
 					I hope you find it fun and useful!</h2>
 			</header>
+			<div id="overText">
+				Hello Hi How are you whatsup?
+			</div>
 			<div id="main">
 				<ul id="wordlist">
 					<?php 

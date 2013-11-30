@@ -24,5 +24,24 @@ ul{
 	opacity: .7;
 	z-index: 300;
 	height: 100%; width:100%;
-	position:absolute; top:0; left:0;
+	position:absolute; 
+	top:0;
+	left:0;
 }
+
+#overText {
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color: #333333;
+	color: #D9D9F3;
+	font-size: 20px;
+	height:40px;
+	width:500px;
+	text-align: center;
+	padding-top:10px;
+	position:absolute;
+	left:50%;
+	margin-left: -250px;
+	margin-top:230px;
+	z-index: 301;
+} 

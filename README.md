@@ -11,11 +11,15 @@ Everything else will be handled on the browser
  via javascript.
 
 //  TODO:
+
 	Add message to overlay.
 
 	Create database and add data.
 
 	create php object to be accessed via 
 	ajax to load the next word
+
+	#333333
+	^ dark gray
 
 	
