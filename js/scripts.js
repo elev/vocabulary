@@ -4,7 +4,8 @@ var state = false;
 // messageHTML is what message to display to the user depending on page state.
 var messageHTML = '';
 
-// remove the overlay
+// remove the overlay, if we're in a correct state make an ajax call
+// to change the main page content
 function removeNode(){
 	document.body.removeChild(document.getElementById("overlay"));
 	if (state === true) {
@@ -18,7 +19,7 @@ function createMessageBox(text){
 	messageBox.setAttribute("id", "overText");
 	messageBox.innerHTML= text;
 
-	//creates the closing circle, appends it to the message box
+	// creates the closing circle, appends it to the message box
 	var circle = document.createElement("div");
 	circle.setAttribute("class", "circle");
 	circle.innerHTML= "X";
@@ -28,6 +29,7 @@ function createMessageBox(text){
 
 // create an overlay to run when an answer was chosen
 function createOverlay(){
+	// change message and page state
 	if (this.className == "correct") {
 		messageHTML = "You are correct!";
 		state = true;
@@ -51,7 +53,7 @@ function createOverlay(){
 /**
 * loop through the answers nodeList using 
 * array's foreach method and assign the
-* answer correct function as a click event
+* createOverlay function as a click event
 * for every answer.
 */
 // get the child nodes of definitionTest
@@ -77,6 +79,3 @@ function makeRequest(){
 	httpRequest.open('GET', 'ajax.php', true);
 	httpRequest.send(null);
 }
-
-// document.getElementById("opp").onclick = function(){ 
-// 	makeRequest(); };
