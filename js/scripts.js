@@ -1,10 +1,15 @@
+// state tracks whether a wrong or correct answer is selected
+var state = false;
 
-// get the child nodes of definitionTest
-var answers = document.getElementById('definitionTest').childNodes;
+// messageHTML is what message to display to the user depending on page state.
+var messageHTML = '';
 
 // remove the overlay
 function removeNode(){
 	document.body.removeChild(document.getElementById("overlay"));
+	if (state === true) {
+		makeRequest();
+	}
 }
 
 // creates a message box
@@ -23,8 +28,12 @@ function createMessageBox(text){
 
 // create an overlay to run when an answer was chosen
 function createOverlay(){
-	var messageHTML = this.className == "correct" ? 
-		"You are correct!" : "You are wrong, please try again.";
+	if (this.className == "correct") {
+		messageHTML = "You are correct!";
+		state = true;
+	}else{
+		messageHTML = "You are wrong, please try again.";
+	}
 	// create and add the overlay
 	var overlay = document.createElement("div");
 	overlay.setAttribute("id", "overlay");
@@ -45,6 +54,29 @@ function createOverlay(){
 * answer correct function as a click event
 * for every answer.
 */
+// get the child nodes of definitionTest
+var answers = document.getElementById('definitionTest').childNodes;
+
 Array.prototype.forEach.call(answers, function(answer){
 	answer.addEventListener('click', createOverlay);
 });
+
+// Ajax Call, using regular javascript, does not currently
+// support older versions of IE;
+function makeRequest(){	
+	var httpRequest = new XMLHttpRequest();
+	httpRequest.onreadystatechange = function(){
+		if (httpRequest.readyState === 4) {
+			if (httpRequest.status === 200) {
+				console.log(httpRequest.responseText);
+			}else{
+				console.log("there was a server error");
+			}
+		}
+	}
+	httpRequest.open('GET', 'ajax.php', true);
+	httpRequest.send(null);
+}
+
+// document.getElementById("opp").onclick = function(){ 
+// 	makeRequest(); };
