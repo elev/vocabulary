@@ -22,4 +22,4 @@ Everything else will be handled on the browser
 	#333333
 	^ dark gray
 
-	
+	Maybe, eventually use the websters or dictionary.com apis...

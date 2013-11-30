@@ -62,5 +62,8 @@ ul{
 	font-size: 15px;
 	font-weight: bold;
 	vertical-align: middle;
+	position:relative;
+	bottom:39px;
+	left:485px;
 }
 
