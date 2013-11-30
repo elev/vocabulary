@@ -12,14 +12,10 @@ Everything else will be handled on the browser
 
 //  TODO:
 
-	Add message to overlay.
+	Create Database and table for words.
 
-	Create database and add data.
+	Create PHP Object to retrive data
 
-	create php object to be accessed via 
-	ajax to load the next word
-
-	#333333
-	^ dark gray
+	Utilize this object on initial page load and the ajax file
 
 	Maybe, eventually use the websters or dictionary.com apis...
