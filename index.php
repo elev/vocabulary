@@ -22,6 +22,7 @@
 			<div id="overText">
 				Hello Hi How are you whatsup?
 			</div>
+			<div class="circle">X</div>
 			<div id="main">
 				<ul id="wordlist">
 					<?php 
