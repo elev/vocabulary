@@ -36,6 +36,7 @@
 			}
 			$this->answers = $this->incorrects;
 			$this->answers[] = $this->definition;
+			shuffle($this->answers);
 		}
 
 		function __get($prop){

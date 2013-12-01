@@ -53,6 +53,7 @@ li{
 	margin-left: -250px;
 	margin-top:230px;
 	z-index: 301;
+	opacity: 1;
 }
 
 .circle {
