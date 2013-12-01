@@ -71,7 +71,8 @@ function makeRequest(){
 	httpRequest.onreadystatechange = function(){
 		if (httpRequest.readyState === 4) {
 			if (httpRequest.status === 200) {
-				console.log(httpRequest.responseText);
+				//console.log(httpRequest.responseText);
+				document.getElementById('main').innerHTML = httpRequest.responseText;
 				state = false;
 			}else{
 				console.log("there was a server error, please reload the page");
