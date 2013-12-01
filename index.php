@@ -20,19 +20,7 @@
 					I hope you find it fun and useful!</h2>
 			</header>
 			<div id="main">
-				<ul id="wordlist">
-					<?php 
-						// we will regenerate the below code at random with PHP
-					?>
-					<li>word 1</li>
-					<li><ul id="definitionTest">
-							<li>nah nah nah</li>
-							<li>no no no no</li>
-							<li class="correct">This is the correct answer</li>
-							<li>nonononono</li>
-						</ul>
-					</li>
-				</ul>
+				<?php include_once('ajax.php'); ?>
 			</div>
 		</div>
 		<script src="js/scripts.js" type="text/javascript"></script>

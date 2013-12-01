@@ -10,6 +10,9 @@ ul{
 	list-style-type: none;
 	color: #D9D9F3;
 }
+li{
+	padding:10px;
+}
 
 #main{
 	position: absolute;
@@ -17,6 +20,9 @@ ul{
 	left: 50%;
 	width:300px;
 	margin-left:-150px;
+}
+#main h1{
+	color: #D9D9F3;
 }
 
 #overlay{

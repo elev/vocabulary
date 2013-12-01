@@ -12,12 +12,6 @@ Everything else will be handled on the browser
 
 //  TODO:
 
-	Create Database and table for words.
-
-	Create PHP Object to retrive data
-
-	Utilize this object on initial page load and the ajax file
-
+	Add the correct class to the answer...
+	
 	Maybe, eventually use the websters or dictionary.com apis...
-
-	Perhaps make Word a singleton... since there should only be one of those at a time.

@@ -8,6 +8,7 @@ var messageHTML = '';
 // to change the main page content
 function removeNode(){
 	document.body.removeChild(document.getElementById("overlay"));
+	console.log(state);
 	if (state === true) {
 		makeRequest();
 	}
@@ -71,8 +72,9 @@ function makeRequest(){
 		if (httpRequest.readyState === 4) {
 			if (httpRequest.status === 200) {
 				console.log(httpRequest.responseText);
+				state = false;
 			}else{
-				console.log("there was a server error");
+				console.log("there was a server error, please reload the page");
 			}
 		}
 	}
