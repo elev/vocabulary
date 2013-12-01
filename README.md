@@ -19,3 +19,5 @@ Everything else will be handled on the browser
 	Utilize this object on initial page load and the ajax file
 
 	Maybe, eventually use the websters or dictionary.com apis...
+
+	Perhaps make Word a singleton... since there should only be one of those at a time.
