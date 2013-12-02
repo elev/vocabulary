@@ -12,10 +12,12 @@ Everything else will be handled on the browser
 
 //  TODO:
 
-	make clicking the overlay also destroy the elements..
+	get the close button on the overlay to work, and look better.
 
-	remove bootstrap
-	
+	git	remove bootstrap
+
+	Fix defintion spelling errors in db
+
 	Add more words to the database
 
 	Update Styles / design

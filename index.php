@@ -9,14 +9,14 @@
 <html>
 	<head>
 		<title>Vocabulary Builder</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+	<!-- 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css"> -->
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
 	<body>
 		<div id="content">	
 			<header>
-				<h2>Vocabulary Builder 1.0</h2>
+				<h1>Vocabulary Builder 1.0</h1>
 			</header>
 			<div id="main">
 				<?php include_once('ajax.php'); ?>

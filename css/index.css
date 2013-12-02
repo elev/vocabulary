@@ -1,14 +1,20 @@
 body {
 	background-color:#B0C4DE;
+	
+/*	background-color: #FFFFFF;
+*/	font-family: georgia, times, serif;
 }
 
-header h2 {
+header h1 {
 	margin-left: 100px;
-	color: #FFFFFF;
+	font-size:40px;
+	color: #222222;
+
 }
+
 ul{
 	list-style-type: none;
-	color: #FFFFFF;
+	color: #222222;
 }
 li{
 	padding:10px;
@@ -19,11 +25,13 @@ li{
 	position: absolute;
 	margin-top:200px;
 	left: 50%;
-	width:300px;
-	margin-left:-150px;
+	width:400px;
+	margin-left:-200px;
+	font-size: 17px;
 }
 #main h1{
-	color: #FFFFFF;
+	color: #222222;
+	font-size: 40px;
 }
 
 #overlay{
