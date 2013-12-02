@@ -12,8 +12,12 @@ Everything else will be handled on the browser
 
 //  TODO:
 
-	Need to create a fade in, with adjustable opacity variable.
+	make clicking the overlay also destroy the elements..
+
+	remove bootstrap
 	
-	Change these styles because the fade out is making me feel blind...
+	Add more words to the database
+
+	Update Styles / design
 
 	Maybe, eventually use the websters or dictionary.com apis...

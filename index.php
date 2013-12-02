@@ -16,8 +16,7 @@
 	<body>
 		<div id="content">	
 			<header>
-				<h2>Welcome to my vocabulary building site,
-					I hope you find it fun and useful!</h2>
+				<h2>Vocabulary Builder 1.0</h2>
 			</header>
 			<div id="main">
 				<?php include_once('ajax.php'); ?>

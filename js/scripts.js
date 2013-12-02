@@ -5,17 +5,26 @@ var state = false;
 var messageHTML = '';
 
 // fade out
-function fadeOut(element) {
-	var op = 1;  // initial opacity
+function fadeOut(element, op) {
+	var op = .7;  // initial opacity
 	var timer = setInterval(function () {
 		if (op <= 0.1){
 			clearInterval(timer);
 			document.body.removeChild(element);
 		}
 		element.style.opacity = op;
-		element.style.filter = 
-			'alpha(opacity=' + op * 100 + ")";
-		op -= op * 0.1;
+		op -=  .1;
+	}, 10);
+}
+
+function fadeIn(element, finalOp) {
+	var op = 0;  // initial opacity
+	var timer = setInterval(function () {
+		if (op == finalOp){
+			clearInterval(timer);
+		}
+		element.style.opacity = op;
+		op += .1;
 	}, 20);
 }
 
@@ -57,10 +66,11 @@ function createOverlay(){
 	var overlay = document.createElement("div");
 	overlay.setAttribute("id", "overlay");
 	document.body.appendChild(overlay);
+	fadeIn(overlay, .7);
 
 	// create the text area...
 	document.body.appendChild(createMessageBox(messageHTML));
-
+	fadeIn(document.getElementById('overText'), 1);
 	// bind a click to remove it.
 	overlay.addEventListener('click', removeNode);
 }
