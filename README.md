@@ -12,6 +12,8 @@ Everything else will be handled on the browser
 
 //  TODO:
 
-	Create fade in and fade out when adding the overlays and changing the ajax...
+	Need to create a fade in, with adjustable opacity variable.
+	
+	Change these styles because the fade out is making me feel blind...
 
 	Maybe, eventually use the websters or dictionary.com apis...

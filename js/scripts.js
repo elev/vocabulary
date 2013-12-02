@@ -4,11 +4,27 @@ var state = false;
 // messageHTML is the message to display to the user depending on page state.
 var messageHTML = '';
 
+// fade out
+function fadeOut(element) {
+	var op = 1;  // initial opacity
+	var timer = setInterval(function () {
+		if (op <= 0.1){
+			clearInterval(timer);
+			document.body.removeChild(element);
+		}
+		element.style.opacity = op;
+		element.style.filter = 
+			'alpha(opacity=' + op * 100 + ")";
+		op -= op * 0.1;
+	}, 20);
+}
+
+
 // remove the overlay, if we're in a correct state make an ajax call
 // to change the main page content
 function removeNode(){
-	document.body.removeChild(document.getElementById("overlay"));
-	document.body.removeChild(document.getElementById("overText"));
+	fadeOut(document.getElementById("overlay"));
+	fadeOut(document.getElementById("overText"));
 	if (state === true) {
 		makeRequest();
 	}
