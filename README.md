@@ -1,25 +1,24 @@
 This is a small application to learn new words
- by repitition.
+ by repetition.
 
 You will see the words repetitively and select 
-the defintion and use them in a sentence.
+the defintion.
 
 We will make database connections and pulls via 
-PHP, read only at the point.
+PHP, javascript will controll everything else.
 
-Everything else will be handled on the browser
- via javascript.
+I am not using jQuery as an attempt to become more
+familiar with regular javascript.
 
 //  TODO:
 
-	get the close button on the overlay to work, and look better.
-
-	git	remove bootstrap
+	git remove the bootstrap that is not being used
 
 	Fix defintion spelling errors in db
 
 	Add more words to the database
 
-	Update Styles / design
-
 	Maybe, eventually use the websters or dictionary.com apis...
+
+	Update and add a useage of the words, and perhaps a word list state 
+	to show different words every week.
