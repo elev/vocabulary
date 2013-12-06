@@ -1,3 +1,8 @@
+Please change your_config.php to config.php and set the
+appropriate variables.
+
+An install script will be written soon.
+
 This is a small application to learn new words
  by repetition.
 
@@ -11,6 +16,8 @@ I am not using jQuery as an attempt to become more
 familiar with regular javascript.
 
 //  TODO:
+
+	create a bash script or php install script	
 
 	git remove the bootstrap that is not being used
 
