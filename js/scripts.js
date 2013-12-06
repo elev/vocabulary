@@ -55,16 +55,6 @@ function removeNode(){
 	}
 }
 
-// creates a message box
-// function createMessageBox(text){
-// 	// // creates the closing circle, appends it to the message box
-// 	var circle = document.createElement("div");
-// 	circle.setAttribute("class", "circle");
-// 	circle.innerHTML= "X";
-// 	messageBox.appendChild(circle);
-// 	return messageBox;
-// }
-
 // create an overlay to run when an answer was chosen
 function createOverlay(){
 	// change message and page state
@@ -85,7 +75,7 @@ function createOverlay(){
 	overText.setAttribute("id", "overText");
 	overText.innerHTML= messageHTML;
 	document.body.appendChild(overText);
-	fadeIn(overText, 0.7);
+	fadeIn(overText, 1);
 	// bind a click to remove it.
 	overlay.addEventListener('click', removeNode);
 }
