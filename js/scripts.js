@@ -4,54 +4,66 @@ var state = false;
 // messageHTML is the message to display to the user depending on page state.
 var messageHTML = '';
 
+// black overlay that will eventually be added
+// this is a dom element that does not exist on init
+var overlay = '';
+
+// textBox that will be added to the overlay
+// this is a dom element that doesn't exist on init
+var overText = '';
+
+// this is a node list of answers,
+// it will be repopulated with ajax each iteration.
+var answers = '';
+
+
 // fade out
-function fadeOut(element, op) {
+function fadeOut() {
+	overlay = document.getElementById('overlay');
+	overText = document.getElementById('overText');
 	var op = .7;  // initial opacity
 	var timer = setInterval(function () {
 		if (op <= 0.1){
 			clearInterval(timer);
-			document.body.removeChild(element);
+			document.body.removeChild(overlay);
+			document.body.removeChild(overText);
 		}
-		element.style.opacity = op;
-		op -=  .1;
-	}, 10);
+		op -=  0.05;
+		overlay.style.opacity = op;
+		overText.style.opacity = op;
+	}, 20);
 }
 
 function fadeIn(element, finalOp) {
 	var op = 0;  // initial opacity
 	var timer = setInterval(function () {
-		if (op == finalOp){
+		if (op >= finalOp){
 			clearInterval(timer);
 		}
 		element.style.opacity = op;
-		op += .1;
+		op += 0.05;
 	}, 20);
 }
 
 
-// remove the overlay, if we're in a correct state make an ajax call
-// to change the main page content
+// // remove the overlay, if we're in a correct state make an ajax call
+// // to change the main page content
 function removeNode(){
-	fadeOut(document.getElementById("overlay"));
-	fadeOut(document.getElementById("overText"));
+	fadeOut();
 	if (state === true) {
 		makeRequest();
 	}
 }
 
 // creates a message box
-function createMessageBox(text){
-	var messageBox = document.createElement("div");
-	messageBox.setAttribute("id", "overText");
-	messageBox.innerHTML= text;
-
-	// creates the closing circle, appends it to the message box
-	var circle = document.createElement("div");
-	circle.setAttribute("class", "circle");
-	circle.innerHTML= "X";
-	messageBox.appendChild(circle);
-	return messageBox;
-}
+// function createMessageBox(text){
+// 	// // creates the closing circle, appends it to the message box
+// 	var circle = document.createElement("div");
+// 	circle.setAttribute("class", "circle");
+// 	circle.innerHTML= "X";
+// 	messageBox.appendChild(circle);
+// 	return messageBox;
+// }
 
 // create an overlay to run when an answer was chosen
 function createOverlay(){
@@ -63,33 +75,19 @@ function createOverlay(){
 		messageHTML = "You are wrong, please try again.";
 	}
 	// create and add the overlay
-	var overlay = document.createElement("div");
+	overlay = document.createElement("div");
 	overlay.setAttribute("id", "overlay");
 	document.body.appendChild(overlay);
-	fadeIn(overlay, .7);
+	fadeIn(overlay, 0.7);
 
 	// create the text area...
-	document.body.appendChild(createMessageBox(messageHTML));
-	fadeIn(document.getElementById('overText'), 1);
+	overText = document.createElement("div");
+	overText.setAttribute("id", "overText");
+	overText.innerHTML= messageHTML;
+	document.body.appendChild(overText);
+	fadeIn(overText, 0.7);
 	// bind a click to remove it.
 	overlay.addEventListener('click', removeNode);
-}
-
-
-
-/**
-* loop through the answers nodeList using 
-* array's foreach method and assign the
-* createOverlay function as a click event
-* for every answer.
-*/
-// get the child nodes of definitionTest
-function bindAnswers(){
-	var answers = document.getElementById('definitionTest').childNodes;
-
-	Array.prototype.forEach.call(answers, function(answer){
-		answer.addEventListener('click', createOverlay);
-	});
 }
 
 // Ajax Call, using regular javascript, does not currently
@@ -112,6 +110,22 @@ function makeRequest(){
 	httpRequest.open('GET', 'ajax.php', true);
 	httpRequest.send(null);
 }
+
+// /**
+// * loop through the answers nodeList using 
+// * array's foreach method and assign the
+// * createOverlay function as a click event
+// * for every answer.
+// */
+// // get the child nodes of definitionTest
+function bindAnswers(){
+	answers = document.getElementById('definitionTest').childNodes;
+
+	Array.prototype.forEach.call(answers, function(answer){
+		answer.addEventListener('click', createOverlay);
+	});
+}
+
 
 // on initial page load, bind click event to the answers.
 bindAnswers();
