@@ -1,7 +1,7 @@
 <?php
 	require_once('database.php');
 	/**
-	* retreices words and their definitions from a database
+	* retrieves words and their definitions from a database
 	* @defintion string 
 	* @name string
 	* @type string
